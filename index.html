@@ -1,0 +1,3274 @@
+<!doctype html>
+<html lang="id" class="h-full scroll-smooth">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Tenant - Inkubasi Bisnis Teknologi Cimahi Techno Park</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFP2xYt3DARFAqrz2zfTuECbSet-BAW5MfAg&s">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Plus Jakarta Sans', sans-serif; }
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .fade-in-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-in-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .scale-in {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .scale-in.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .hero-gradient {
+      background: linear-gradient(135deg, #0369a1 0%, #0284c7 50%, #0369a1 100%);
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(3, 105, 161, 0.15);
+    }
+    
+    .stat-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+    }
+    
+    .tenant-card {
+      transition: all 0.3s ease;
+    }
+    
+    .tenant-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(3, 105, 161, 0.2);
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #fbbf24;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .floating-shape {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .pulse-ring {
+      animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    }
+    
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+    
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+    }
+    
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f0f9ff;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #0369a1;
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #fbbf24;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0369a1',
+            secondary: '#0284c7',
+            accent: '#fbbf24',
+            light: '#f0f9ff'
+          }
+        }
+      }
+    }
+  </script>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-white text-gray-800 overflow-auto">
+  <div id="app-wrapper" class="w-full h-full"><!-- Navigation -->
+   <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex justify-between items-center h-16 md:h-20">
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
+      <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+  <img 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFP2xYt3DARFAqrz2zfTuECbSet-BAW5MfAg&s"
+    alt="Logo CTP"
+    class="w-full h-full object-contain rounded-lg"
+  >
+</div>
+       </div>
+       <div class="hidden sm:block"><span class="text-sm md:text-base font-bold text-primary">Cimahi Techno Park</span> <span class="block text-xs text-gray-500">Inkubasi Bisnis Teknologi</span>
+       </div>
+      </div>
+      <div class="hidden md:flex items-center gap-8"><a href="#profil" class="nav-link text-sm font-medium text-gray-600 hover:text-primary">Profil</a> <a href="#tenant-tahun" class="nav-link text-sm font-medium text-gray-600 hover:text-primary">Tenant</a> <a href="#kontak" class="nav-link text-sm font-medium text-gray-600 hover:text-primary">Kontak</a>
+      </div><button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+       <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       </svg></button>
+     </div>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+     <div class="px-4 py-3 space-y-2"><a href="#profil" class="block py-2 text-gray-600 hover:text-primary">Profil</a> <a href="#tenant-tahun" class="block py-2 text-gray-600 hover:text-primary">Tenant</a> <a href="#kontak" class="block py-2 text-gray-600 hover:text-primary">Kontak</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+<section id="hero"
+class="min-h-[85vh] flex items-center relative overflow-hidden pt-20 bg-cover bg-center bg-no-repeat"
+style="
+background-image:
+linear-gradient(rgba(10,20,40,0.75), rgba(10,20,40,0.85)),
+url('https://media.licdn.com/dms/image/v2/C511BAQHcUS4kpCi1kw/company-background_10000/company-background_10000/0/1583977591054/cimahitechnopark_cover?e=2147483647&v=beta&t=6CsOoxiZCdfVoj8215oVep_FrfDm2HZpJIG89_gj3_0'),
+linear-gradient(135deg,#0f172a,#1e3a8a);
+">
+
+<!-- Background Animations -->
+<div class="absolute inset-0 overflow-hidden">
+
+<div class="floating-shape absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
+<div class="floating-shape absolute bottom-10 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+
+<div class="absolute top-1/4 right-1/4 w-2 h-2 bg-accent rounded-full animate-ping"></div>
+<div class="absolute bottom-1/3 left-1/3 w-3 h-3 bg-accent/60 rounded-full animate-pulse"></div>
+
+<!-- Grid -->
+<div class="absolute inset-0 opacity-10">
+<svg width="100%" height="100%">
+<defs>
+<pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+<path d="M 50 0 L 0 0 0 50" fill="none" stroke="white" stroke-width="0.5"/>
+</pattern>
+</defs>
+<rect width="100%" height="100%" fill="url(#grid)"/>
+</svg>
+</div>
+
+</div>
+
+
+<div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 relative z-10">
+
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+
+<!-- TEXT -->
+<div class="text-center lg:text-left">
+
+<div class="fade-in inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+<span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+<span class="text-accent text-sm font-medium">
+Inkubasi Bisnis Teknologi
+</span>
+</div>
+
+<h1 class="fade-in text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+<span class="text-accent">E-KETAN ABI</span><br>
+ELEKTRONIK KATALOG TENANT<br>
+<span class="text-accent">INKUBASI BISNIS TEKNOLOGI</span><br>
+
+</h1>
+
+<p class="fade-in text-lg sm:text-xl text-blue-100 mb-8 max-w-xl mx-auto lg:mx-0">
+Membangun Ekosistem Inovasi dan Teknologi untuk
+Meningkatkan Daya Saing Daerah
+</p>
+
+<div class="fade-in flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+
+<a href="#tenant-tahun"
+class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-accent/30">
+Lihat Tenant
+</a>
+
+<a href="#pengantar"
+class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-medium px-8 py-4 rounded-xl backdrop-blur-sm transition">
+Pelajari Lebih
+</a>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE (tanpa oval biru) -->
+<div class="hidden lg:block relative">
+
+<div class="relative w-full h-[420px] flex items-center justify-center">
+
+<div class="text-center">
+
+<div class="w-20 h-20 mx-auto mb-4 bg-accent/20 rounded-2xl flex items-center justify-center animate-bounce backdrop-blur">
+
+<svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707"/>
+</svg>
+
+</div>
+
+<span class="text-white font-semibold text-lg">
+Innovation Hub
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+   <!-- Kata Pengantar -->
+  <!-- SECTION KATA PENGANTAR -->
+<section id="pengantar" class="scroll-mt-24 py-24 bg-white relative z-10">
+  <div class="max-w-5xl mx-auto px-6 lg:px-8">
+    
+    <!-- Judul -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+        Kata Pengantar
+      </h2>
+      <div class="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Card Content -->
+    <div class="bg-light rounded-3xl shadow-xl p-8 md:p-12 leading-relaxed text-gray-700 text-justify space-y-6">
+      
+      <p>
+        Puji dan syukur kita panjatkan ke hadirat Tuhan Yang Maha Esa atas rahmat dan karunia-Nya,
+        sehingga Katalog Tenant Inkubasi Bisnis Teknologi Cimahi Techno Park ini dapat disusun dan dipublikasikan.
+        Katalog ini merupakan bagian dari komitmen kami dalam mendukung pengembangan ekosistem inovasi,
+        kewirausahaan, dan teknologi di Kota Cimahi.
+      </p>
+
+      <p>
+        Melalui program Inkubasi Bisnis Teknologi, Cimahi Techno Park berupaya memberikan pendampingan,
+        fasilitasi, serta penguatan kapasitas bagi para tenant agar mampu tumbuh secara berkelanjutan,
+        berdaya saing, dan siap memasuki pasar yang lebih luas.
+      </p>
+
+      <p>
+        Katalog ini menampilkan profil tenant binaan yang telah melalui proses seleksi dan pembinaan,
+        mencerminkan semangat inovasi, kreativitas, dan profesionalisme dalam mengembangkan produk dan layanan berbasis teknologi.
+      </p>
+
+      <p>
+        Kami berharap katalog ini dapat menjadi media informasi, promosi, sekaligus sarana kolaborasi
+        antara tenant, mitra industri, akademisi, investor, dan seluruh pemangku kepentingan.
+      </p>
+
+      <p class="font-semibold text-primary pt-6">
+        Cimahi Techno Park <br> 
+        Inkubasi Bisnis Teknologi
+      </p>
+
+    </div>
+
+  </div>
+</section>
+<!-- KESESUAIAN LEMBAGA INKUBATOR CIMAHI TECHNOPARK DENGAN PP7 TAHUN 2021 PASAL 132 -->
+ <!-- Kesesuaian Inkubator CTP -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Judul -->
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-800">
+        KESESUAIAN LEMBAGA INKUBATOR CIMAHI TECHNOPARK
+      </h2>
+      <p class="text-lg font-semibold text-blue-700 mt-2">
+        DENGAN PP 7 TAHUN 2021 PASAL 132
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid md:grid-cols-3 gap-10 items-center">
+
+      <!-- Kiri -->
+      <div class="space-y-10">
+
+        <!-- SDM -->
+        <div class="text-center md:text-right">
+          <div class="flex justify-center md:justify-end mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-4-4h-1m-4 6H6v-2a4 4 0 014-4h3m-5-4a4 4 0 110-8 4 4 0 010 8zm10 0a4 4 0 110-8 4 4 0 010 8z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-lg text-gray-800">SDM DAN MANAJEMEN</h3>
+          <p class="text-sm text-gray-600">
+            Pelatihan sesuai kebutuhan para pelaku startup
+          </p>
+        </div>
+
+        <!-- Pembiayaan -->
+        <div class="text-center md:text-right">
+          <div class="flex justify-center md:justify-end mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-3.866 0-7 1.79-7 4s3.134 4 7 4 7-1.79 7-4-3.134-4-7-4z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12v5c0 2.21 3.134 4 7 4s7-1.79 7-4v-5"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-lg text-gray-800">PEMBIAYAAN</h3>
+          <p class="text-sm text-gray-600">
+            Mempertemukan startup dengan investor seperti venture capital dan angel capital
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Tengah (Panah Visual) -->
+      <div class="flex justify-center">
+        <div class="w-24 h-24 bg-gradient-to-b from-gray-300 to-gray-500 rounded-full flex items-center justify-center shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Kanan -->
+      <div class="space-y-10">
+
+        <!-- Produksi -->
+        <div class="text-center md:text-left">
+          <div class="flex justify-center md:justify-start mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a10 10 0 100 20 10 10 0 000-20z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-lg text-gray-800">PRODUKSI</h3>
+          <p class="text-sm text-gray-600">
+            Pelaksanaan produksi teknologi dan desain untuk dikomersialisasikan
+          </p>
+        </div>
+
+        <!-- Teknologi -->
+        <div class="text-center md:text-left">
+          <div class="flex justify-center md:justify-start mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17a4 4 0 110-8 4 4 0 010 8z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.4 15a7.97 7.97 0 000-6l2.1-1.6-2-3.4-2.5 1a8.1 8.1 0 00-5.2-2l-.4-2.7H9.6L9.2 3a8.1 8.1 0 00-5.2 2l-2.5-1-2 3.4L1.6 9a7.97 7.97 0 000 6l-2.1 1.6 2 3.4 2.5-1a8.1 8.1 0 005.2 2l.4 2.7h3.8l.4-2.7a8.1 8.1 0 005.2-2l2.5 1 2-3.4L19.4 15z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-lg text-gray-800">TEKNOLOGI DAN DESAIN</h3>
+          <p class="text-sm text-gray-600">
+            Pembangunan kolaborasi antara teknologi dan desain untuk mempertegas branding produk startup
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Pemasaran -->
+    <div class="mt-16 text-center">
+      <div class="flex justify-center mb-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h13v6M9 17l-5-5 5-5"/>
+        </svg>
+      </div>
+      <h3 class="font-semibold text-lg text-gray-800">PEMASARAN</h3>
+      <p class="text-sm text-gray-600">
+        Pelaksanaan pameran dan business matching yang dilaksanakan
+      </p>
+    </div>
+
+  </div>
+</section>
+   <!-- Divider -->
+   <div class="section-divider max-w-6xl mx-auto"></div><!-- Daftar Isi -->
+   <section id="daftar-isi" class="py-20 lg:py-32 bg-light">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-12"><span class="fade-in inline-block px-4 py-1 bg-accent/10 text-primary text-sm font-medium rounded-full mb-4">Navigasi</span>
+      <h2 class="fade-in text-3xl sm:text-4xl font-bold text-primary mb-2">Daftar Isi</h2>
+      <div class="w-20 h-1 bg-accent mx-auto rounded-full"></div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-4"><a href="#profil" class="fade-in card-hover bg-white p-6 rounded-2xl flex items-center gap-4 group">
+       <div class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"><span class="text-white font-bold text-lg">01</span>
+       </div>
+       <div>
+        <h3 class="font-semibold text-primary group-hover:text-secondary transition-colors">Profil Singkat Lembaga</h3>
+        <p class="text-sm text-gray-500">Visi, Misi, dan Statistik</p>
+       </div>
+       <svg class="w-5 h-5 text-gray-400 ml-auto group-hover:text-accent group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+       </svg></a> <a href="#tenant-tahun" class="fade-in card-hover bg-white p-6 rounded-2xl flex items-center gap-4 group">
+       <div class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"><span class="text-white font-bold text-lg">02</span>
+       </div>
+       <div>
+        <h3 class="font-semibold text-primary group-hover:text-secondary transition-colors">Daftar Tenant BITC</h3>
+        <p class="text-sm text-gray-500">Daftar Tenant Aktif BITC</p>
+       </div>
+       <svg class="w-5 h-5 text-gray-400 ml-auto group-hover:text-accent group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+       </svg></a> <a href="#penutup" class="fade-in card-hover bg-white p-6 rounded-2xl flex items-center gap-4 group">
+       <div class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"><span class="text-white font-bold text-lg">03</span>
+       </div>
+       <div>
+        <h3 class="font-semibold text-primary group-hover:text-secondary transition-colors">Penutup</h3>
+        <p class="text-sm text-gray-500">Kesimpulan &amp; Kontak</p>
+       </div>
+       <svg class="w-5 h-5 text-gray-400 ml-auto group-hover:text-accent group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+       </svg></a>
+     </div>
+    </div>
+   </section><!-- Divider -->
+   <div class="section-divider max-w-6xl mx-auto"></div><!-- Profil Lembaga -->
+   <section id="profil" class="py-20 lg:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16"><span class="fade-in inline-block px-4 py-1 bg-accent/10 text-primary text-sm font-medium rounded-full mb-4">Tentang Kami</span>
+      <h2 class="fade-in text-3xl sm:text-4xl font-bold text-primary mb-2">Profil Singkat Lembaga</h2>
+      <div class="w-20 h-1 bg-accent mx-auto rounded-full mb-6"></div>
+      <p class="fade-in text-gray-600 max-w-2xl mx-auto">Inkubasi Bisnis Teknologi Cimahi Techno Park</p>
+     </div>
+     <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+      <div class="fade-in-left">
+       <div class="relative">
+        <div class="absolute -inset-4 bg-gradient-to-br from-accent/20 to-secondary/20 rounded-3xl blur-xl"></div>
+        <div class="relative bg-gradient-to-br from-primary to-secondary p-8 md:p-12 rounded-3xl">
+         <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+         </div>
+         <p class="text-blue-100 leading-relaxed">Inkubasi Bisnis Teknologi Cimahi Techno Park merupakan unit layanan yang berfokus pada pembinaan dan pengembangan startup berbasis teknologi. Didirikan dengan semangat untuk mendorong pertumbuhan ekonomi kreatif dan inovasi di Kota Cimahi dan sekitarnya, lembaga ini menyediakan berbagai fasilitas dan program pendampingan bagi para pelaku usaha rintisan.</p>
+         <p class="text-blue-100 leading-relaxed mt-4">Melalui pendekatan holistik yang mencakup mentoring bisnis, akses pendanaan, networking, dan pengembangan produk, kami berkomitmen untuk menciptakan ekosistem yang kondusif bagi tumbuh kembangnya wirausaha teknologi yang tangguh dan berdaya saing.</p>
+        </div>
+       </div>
+      </div>
+      <div class="fade-in-right space-y-6"><!-- Visi -->
+       <div class="bg-light p-6 rounded-2xl border border-blue-100">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+         </div>
+         <h3 class="text-xl font-bold text-primary">Visi</h3>
+        </div>
+        <p class="text-gray-600">Menjadi pusat inkubasi inovasi yang profesional, transparan, dan berkelanjutan dalam mengembangkan wirausaha teknologi yang berdaya saing global.</p>
+       </div><!-- Misi -->
+       <div class="bg-light p-6 rounded-2xl border border-blue-100">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+          </svg>
+         </div>
+         <h3 class="text-xl font-bold text-primary">Misi</h3>
+        </div>
+        <ul class="space-y-3">
+         <li class="flex items-start gap-3"><span class="w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"> <span class="w-2 h-2 bg-accent rounded-full"></span> </span> <span class="text-gray-600">Mengembangkan ekosistem inovasi berbasis IPTEK</span></li>
+         <li class="flex items-start gap-3"><span class="w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"> <span class="w-2 h-2 bg-accent rounded-full"></span> </span> <span class="text-gray-600">Meningkatkan produktivitas dan daya saing tenant</span></li>
+         <li class="flex items-start gap-3"><span class="w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"> <span class="w-2 h-2 bg-accent rounded-full"></span> </span> <span class="text-gray-600">Memperkuat kolaborasi dengan akademisi, industri, komunitas, dan pemerintah</span></li>
+        </ul>
+       </div>
+      </div>
+     </div><!-- Statistics -->
+     <div class="grid sm:grid-cols-3 gap-6">
+      <div class="scale-in stat-card p-8 rounded-2xl border border-blue-100 text-center group hover:border-accent/30 transition-colors">
+       <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+       </div>
+       <div class="text-4xl font-bold text-primary mb-2">
+        20
+       </div>
+       <div class="text-gray-500">
+        Tenant Aktif
+       </div>
+      </div>
+      <div class="scale-in stat-card p-8 rounded-2xl border border-blue-100 text-center group hover:border-accent/30 transition-colors" style="transition-delay: 0.1s;">
+       <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+       </div>
+       <div class="text-4xl font-bold text-primary mb-2">
+        40+
+       </div>
+       <div class="text-gray-500">
+        Alumni Tenant
+       </div>
+      </div>
+      <div class="scale-in stat-card p-8 rounded-2xl border border-blue-100 text-center group hover:border-accent/30 transition-colors" style="transition-delay: 0.2s;">
+       <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+        </svg>
+       </div>
+       <div class="text-4xl font-bold text-primary mb-2">
+        10+
+       </div>
+       <div class="text-gray-500">
+        Sektor Industri
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Divider -->
+   <div class="section-divider max-w-6xl mx-auto"></div><!-- Daftar Tenant per Tahun -->
+   <section id="tenant-tahun" class="py-20 lg:py-32 bg-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16"><span class="fade-in inline-block px-4 py-1 bg-accent/10 text-primary text-sm font-medium rounded-full mb-4">Baros Information Technology Creative Centre
+</span>
+      <h2 class="fade-in text-3xl sm:text-4xl font-bold text-primary mb-2">Daftar Tenant Aktif BITC</h2>
+      <div class="w-20 h-1 bg-accent mx-auto rounded-full mb-6"></div>
+      <p class="fade-in text-gray-600 max-w-2xl mx-auto">Tenant yang telah bergabung</p>
+     </div>
+     <!-- 2025 -->
+     <div class="mb-16">
+      <div class="fade-in flex items-center gap-4 mb-8">
+       <div class="w-20 h-20 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg"><span class="text-white font-bold text-2xl">BITC</span>
+       </div>
+       <div>
+        <h3 class="text-2xl font-bold text-primary">Tenant BITC</h3>
+        <p class="text-gray-500">Tenant Aktif Saat ini</p>
+       </div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- BITC awal-->
+<a onclick="openTenant('popup-emifly')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">E</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">EMIFLY</h4>
+      <p class="text-sm text-gray-500">Drone Product & Service</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Layanan VTOL Drone, pemetaan, GIS, dan Drone Light Show untuk konstruksi, agrikultur, serta hiburan. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-tele-infra')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">T</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">PT. Tele Infra Persada</h4>
+      <p class="text-sm text-gray-500">IT & Telecommunication</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Bergerak di bidang teknologi telekomunikasi IT dan otomatisasi sistem. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-cigs')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">C</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">PT CIGS Indonesia Digital</h4>
+      <p class="text-sm text-gray-500">Managed Services Internet</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Penyedia sistem presensi berbasis wajah (Kurita) dan layanan internet terkelola. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-audiolab')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-red-400 to-red-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">A</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">Audio Lab (DIMS)</h4>
+      <p class="text-sm text-gray-500">Web Audio Visual</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Fokus pada pengembangan konten dan teknologi berbasis audio visual web. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-ayena')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">A</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">Ayena Studio</h4>
+      <p class="text-sm text-gray-500">Animasi 2D & 3D</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Studio animasi yang mengerjakan proyek nasional dan internasional seperti Super Neli dan Cocomelon. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-inagri')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">I</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">Inagri</h4>
+      <p class="text-sm text-gray-500">Agrotech & IoT</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Layanan bisnis pertanian berbasis IoT yang menghubungkan produsen langsung ke konsumen. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-msc')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-slate-400 to-slate-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">M</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">PT. Mediatama Strategi Cipta</h4>
+      <p class="text-sm text-gray-500">ERP System & IT Consultant</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Konsultan IT yang menyediakan solusi sistem ERP (The Finex). </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-saepul')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">S</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">Saepul Iman</h4>
+      <p class="text-sm text-gray-500">Konsultan Pajak & Keuangan</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Layanan profesional di bidang perpajakan dan konsultasi keuangan. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-sampul')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">S</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">Sampul Kreatif</h4>
+      <p class="text-sm text-gray-500">Digital Solutions & Animation</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Mitra digital untuk produksi animasi, komik, novel, dan aplikasi web inovatif. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-cpp')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-teal-400 to-teal-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">C</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">PT. Cukup Cakap Projek</h4>
+      <p class="text-sm text-gray-500">Product Digital</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Pengembangan berbagai produk digital kreatif (Lumitra Creative). </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-savana')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-sky-400 to-sky-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">S</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">PT Savana Madani Teknologi</h4>
+      <p class="text-sm text-gray-500">ICT & Logistics Simulator</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Pengembang simulator manajemen transportasi laut dan logistik berbasis ICT. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-forit')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">F</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">Sekolahan.id</h4>
+      <p class="text-sm text-gray-500">IT Hardware & Software</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Penyedia solusi infrastruktur IT baik perangkat keras maupun perangkat lunak. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-tac')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">T</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">PT. Teknologi Aplikasi Cerdas</h4>
+      <p class="text-sm text-gray-500">Sistem Informasi Manajemen</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Fokus pada pengembangan aplikasi cerdas untuk kebutuhan manajemen informasi. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-tive')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-pink-400 to-pink-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">T</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">Tive Studio</h4>
+      <p class="text-sm text-gray-500">Design & Illustration</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Bergerak di bidang kreatif studio yang menyediakan aset digital dan ilustrasi. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-acdi')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-rose-400 to-rose-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">A</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">ACDI</h4>
+      <p class="text-sm text-gray-500">Aviation Training & Digital</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Platform pelatihan aviasi, bahasa, dan pemasaran digital. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-jumpstart')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">J</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">Jump Start</h4>
+      <p class="text-sm text-gray-500">Vending Machine (Kopi)</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Penyedia layanan vending machine kopi otomatis untuk berbagai lokasi. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-blitzspot')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-violet-400 to-violet-600 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">B</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">Blitzspot</h4>
+      <p class="text-sm text-gray-500">IT Solutions</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Penyedia solusi jaringan dan teknologi informasi terintegrasi. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-isrk')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">I</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">PT. Inti Sari Rezeki Komoditi</h4>
+      <p class="text-sm text-gray-500">Trading & Komoditi</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Distribusi hasil alam meliputi minyak pertanian dan minyak goreng. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-vaquest')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-blue-300 to-blue-500 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">V</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">Vaquest Network</h4>
+      <p class="text-sm text-gray-500">Telekomunikasi Kabel</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Penyedia layanan infrastruktur telekomunikasi berbasis kabel. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+
+<a onclick="openTenant('popup-ipng')" class="fade-in tenant-card bg-white p-6 rounded-2xl border border-gray-100 group cursor-pointer">
+  <div class="flex items-center gap-4 mb-4">
+    <div class="w-14 h-14 bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-xl flex items-center justify-center">
+      <span class="text-white font-bold text-lg">I</span>
+    </div>
+    <div>
+      <h4 class="font-semibold text-primary group-hover:text-secondary transition-colors">IDN Products</h4>
+      <p class="text-sm text-gray-500">Agri-Commodity & Export</p>
+    </div>
+  </div>
+  <p class="text-gray-600 text-sm">Distribusi produk natural Indonesia, mulai dari bahan baku komoditas hingga pupuk organik. </p>
+  <div class="mt-4 flex items-center text-accent text-sm font-medium group-hover:translate-x-2 transition-transform">
+    <span>Lihat Profil</span>
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </div>
+</a>
+<!-- BITC akhir-->
+      </div>
+     </div>
+ 
+     <!-- batas bingkai -->
+    </div>
+   </section>
+   <!-- Divider -->
+   <div class="section-divider max-w-6xl mx-auto"></div><!-- Profil Tenant Section -->
+
+
+   <!-- Tenant 1: Khumbu -->
+<!-- POPUP KHUMBU -->
+<div id="popup-emifly" onclick="closeTenant('popup-emifly')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-emifly')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">EMIFLY</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Drone Product & Service (VTOL, Mapping, GIS, Light Show)
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            EMIFLY merupakan perusahaan teknologi yang berfokus pada penyediaan produk dan layanan berbasis drone. Kami spesialis dalam penggunaan teknologi VTOL Drone untuk kebutuhan pemetaan wilayah, sistem informasi geografis (GIS), hingga pertunjukan cahaya (Drone Light Show).
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Kami berkomitmen mendukung efisiensi kerja di berbagai sektor industri seperti konstruksi untuk pengawasan proyek, agrikultur untuk pemantauan lahan, serta industri hiburan melalui atraksi teknologi udara yang inovatif.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🚁</div>
+              <div class="font-semibold text-gray-800">VTOL Drone</div>
+              <div class="text-sm text-gray-500">Penyediaan unit drone spesifikasi tinggi</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🗺️</div>
+              <div class="font-semibold text-gray-800">Pemetaan & GIS</div>
+              <div class="text-sm text-gray-500">Analisis data geografis akurat</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">✨</div>
+              <div class="font-semibold text-gray-800">Drone Light Show</div>
+              <div class="text-sm text-gray-500">Hiburan pertunjukan cahaya udara</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🏗️</div>
+              <div class="font-semibold text-gray-800">Sektor Industri</div>
+              <div class="text-sm text-gray-500">Konstruksi & Agrikultur</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Website / Sosmed</div>
+              <span class="italic">Informasi belum tersedia</span>
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak (WhatsApp)</div>
+              +62 813-9434-9671 
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              AZMI ROQI 
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-emifly')"
+            class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-tele-infra" onclick="closeTenant('popup-tele-infra')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-tele-infra')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">PT. TELE INFRA PERSADA</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          IT Telecommunication Technology and Automation 
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi 
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT. Tele Infra Persada adalah perusahaan yang bergerak di bidang teknologi informasi dengan spesialisasi pada infrastruktur telekomunikasi dan sistem otomatisasi. Kami berfokus pada penyediaan solusi teknologi yang mendukung konektivitas dan efisiensi operasional berbasis digital.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Sebagai bagian dari ekosistem BITC, kami terus berinovasi dalam menghadirkan infrastruktur IT yang kokoh untuk mendukung kebutuhan sektor industri yang semakin dinamis dan terotomatisasi.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📡</div>
+              <div class="font-semibold text-gray-800">Telecommunication Tech</div>
+              <div class="text-sm text-gray-500">Solusi infrastruktur telekomunikasi terintegrasi </div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">⚙️</div>
+              <div class="font-semibold text-gray-800">Automation System</div>
+              <div class="text-sm text-gray-500">Otomatisasi proses bisnis dan industri </div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">💻</div>
+              <div class="font-semibold text-gray-800">IT Infrastructure</div>
+              <div class="text-sm text-gray-500">Pengembangan sistem teknologi informasi </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Website / Sosmed</div>
+              <span class="italic text-gray-400">Informasi tidak tersedia di dokumen </span>
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              +62 821-1989-9090 
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              AHMAD GUMILAR RUSMAN 
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC) 
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-tele-infra')"
+            class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-cigs" onclick="closeTenant('popup-cigs')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-cigs')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-cyan-500 to-teal-600 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">PT CIGS Indonesia Digital</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Managed Services Internet & Facial Recognition System
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT CIGS Indonesia Digital adalah perusahaan IT yang bergerak secara spesifik di bidang Managed Services Internet. Kami berfokus pada penyediaan solusi infrastruktur jaringan yang andal dan terkelola untuk berbagai kebutuhan bisnis.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Salah satu inovasi unggulan kami adalah <strong>Kurita</strong>, sebuah sistem presensi modern yang berbasis pemindaian wajah (face recognition), dirancang untuk meningkatkan akurasi dan efisiensi manajemen SDM di era digital.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">👤</div>
+              <div class="font-semibold text-gray-800">Kurita</div>
+              <div class="text-sm text-gray-500">Sistem presensi berbasis wajah </div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🌐</div>
+              <div class="font-semibold text-gray-800">Managed Services</div>
+              <div class="text-sm text-gray-500">Layanan pengelolaan internet bisnis </div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">💻</div>
+              <div class="font-semibold text-gray-800">IT Solutions</div>
+              <div class="text-sm text-gray-500">Solusi teknologi informasi terintegrasi </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Media Sosial</div>
+              Instagram: @kuritadotid 
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              +62 851-0511-7889 
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              DINA HANUGRAH 
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC) 
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-cigs')"
+            class="px-8 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-audiolab" onclick="closeTenant('popup-audiolab')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-audiolab')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-rose-500 to-red-600 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">AUDIO LAB (DIMS)</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Web Audio Visual Specialist
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            AUDIO LAB (DIMS) adalah unit usaha kreatif yang berfokus pada pengembangan konten dan teknologi berbasis audio visual untuk platform web. Kami mengintegrasikan elemen suara dan visual untuk menciptakan pengalaman digital yang lebih interaktif dan menarik.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Sebagai bagian dari ekosistem kreatif di Baros International Animation Center (BITC), kami mendukung kebutuhan digitalisasi media dengan standar kualitas audio visual yang profesional.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🌐</div>
+              <div class="font-semibold text-gray-800">Web Audio Visual</div>
+              <div class="text-sm text-gray-500">Pengembangan konten AV berbasis web </div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🎙️</div>
+              <div class="font-semibold text-gray-800">Audio Production</div>
+              <div class="text-sm text-gray-500">Layanan pengolahan suara profesional</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🎬</div>
+              <div class="font-semibold text-gray-800">Visual Editing</div>
+              <div class="text-sm text-gray-500">Produksi dan penyuntingan konten visual</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Media Sosial / Website</div>
+              <span class="italic text-gray-400">Informasi tidak tersedia di dokumen </span>
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              <span class="italic text-gray-400">Informasi tidak tersedia di dokumen </span>
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              DANI IRJAYANA 
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC) 
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-audiolab')"
+            class="px-8 py-3 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-ayena" onclick="closeTenant('popup-ayena')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-ayena')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-orange-500 to-amber-600 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">AYENA STUDIO</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          3D & 2D Animation Production House
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Berdiri 2015 • Baros International Animation Center (BITC)
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT. Ayena Mandiri Sinema, atau lebih dikenal sebagai <strong>AYENA STUDIO</strong>, didirikan pada Februari 2015 sebagai perusahaan konten digital yang berbasis di Cimahi. Kami berspesialisasi dalam produksi animasi 2D dan 3D, pengembangan IP (Intellectual Property), serta layanan kreatif visual.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Kami telah melahirkan berbagai karya orisinal seperti <i>Super Neli</i> dan berkontribusi dalam berbagai proyek internasional, menjadikannya salah satu studio animasi terkemuka yang mendorong pertumbuhan industri kreatif di Indonesia.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🎬</div>
+              <div class="font-semibold text-gray-800">Animasi 3D</div>
+              <div class="text-sm text-gray-500">Produksi konten 3D CGI</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">✍️</div>
+              <div class="font-semibold text-gray-800">Animasi 2D</div>
+              <div class="text-sm text-gray-500">Animasi tradisional & digital</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">💡</div>
+              <div class="font-semibold text-gray-800">IP Development</div>
+              <div class="text-sm text-gray-500">Pengembangan karakter & cerita</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🎮</div>
+              <div class="font-semibold text-gray-800">Digital Content</div>
+              <div class="text-sm text-gray-500">Aset visual & media interaktif</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Instagram</div>
+              @ayenastudio
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Email</div>
+              contact@ayena-studio.com
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              +62 819-9620-0045
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan</div>
+              ROBBY PRATAMA
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-ayena')"
+            class="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-inagri" onclick="closeTenant('popup-inagri')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-inagri')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">INAGRI</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Agrotech & Supply Chain Solution
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT. Inagri Global Teknologi adalah perusahaan rintisan teknologi yang berfokus pada digitalisasi sektor pertanian. Kami membangun ekosistem yang menghubungkan produsen hasil tani secara langsung ke konsumen bisnis maupun retail guna menciptakan rantai pasok yang lebih efisien.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Dengan memanfaatkan teknologi informasi, INAGRI berkomitmen untuk meningkatkan kesejahteraan petani lokal melalui akses pasar yang lebih luas dan transparan, serta memastikan kualitas produk pangan terbaik bagi para pelanggan.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🥦</div>
+              <div class="font-semibold text-gray-800">Fresh Supply</div>
+              <div class="text-sm text-gray-500">Distribusi hasil pertanian segar</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📱</div>
+              <div class="font-semibold text-gray-800">Agri-Platform</div>
+              <div class="text-sm text-gray-500">Sistem manajemen rantai pasok digital</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🤝</div>
+              <div class="font-semibold text-gray-800">B2B Partnership</div>
+              <div class="text-sm text-gray-500">Layanan suplai rutin untuk bisnis & resto</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Website / Instagram</div>
+              inagri.asia / @inagri
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              +62 821-2673-3064
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              FAUZAN
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-inagri')"
+            class="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-msc" onclick="closeTenant('popup-msc')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-msc')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-slate-600 to-slate-800 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">PT. Mediatama Strategi Cipta</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          IT Consultant & Enterprise Resource Planning (ERP) Solutions
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT. Mediatama Strategi Cipta (MSC) adalah perusahaan konsultan IT yang berfokus pada penyediaan solusi manajemen bisnis terintegrasi. Kami membantu perusahaan dalam melakukan digitalisasi proses operasional melalui implementasi sistem yang efisien dan tepat sasaran.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Produk unggulan kami, <strong>The Finex</strong>, merupakan sistem Enterprise Resource Planning (ERP) yang dirancang untuk membantu pengelolaan sumber daya perusahaan mulai dari keuangan, logistik, hingga manajemen data secara real-time.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📊</div>
+              <div class="font-semibold text-gray-800">The Finex (ERP)</div>
+              <div class="text-sm text-gray-500">Sistem manajemen sumber daya terpadu</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">👨‍💻</div>
+              <div class="font-semibold text-gray-800">IT Consultant</div>
+              <div class="text-sm text-gray-500">Konsultasi strategi digital perusahaan</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">⚙️</div>
+              <div class="font-semibold text-gray-800">System Integration</div>
+              <div class="text-sm text-gray-500">Integrasi berbagai sistem aplikasi bisnis</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Website / Media Sosial</div>
+              <span class="italic text-gray-400">Informasi tidak tersedia di dokumen</span>
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              +62 813-2222-4109
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              H. ADINDA
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-msc')"
+            class="px-8 py-3 bg-slate-700 hover:bg-slate-800 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-saepul" onclick="closeTenant('popup-saepul')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-saepul')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-amber-500 to-yellow-600 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">SAEPUL IMAN</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Financial & Tax Consultant
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Layanan profesional yang berfokus pada jasa konsultasi keuangan dan perpajakan. Kami membantu individu maupun badan usaha dalam mengelola kewajiban pajak, penyusunan laporan keuangan, serta memberikan saran strategis terkait manajemen finansial agar operasional bisnis tetap patuh (compliance) dan efisien.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📝</div>
+              <div class="font-semibold text-gray-800">Tax Consulting</div>
+              <div class="text-sm text-gray-500">Konsultasi perpajakan pribadi & badan</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📁</div>
+              <div class="font-semibold text-gray-800">Financial Report</div>
+              <div class="text-sm text-gray-500">Penyusunan laporan keuangan periodik</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">⚖️</div>
+              <div class="font-semibold text-gray-800">Legal Compliance</div>
+              <div class="text-sm text-gray-500">Kepatuhan administrasi pajak</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Media Sosial</div>
+              <span class="italic text-gray-400">Informasi tidak tersedia di dokumen</span>
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              0813 2222 4109
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              SAEPUL IMAN
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-saepul')"
+            class="px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-sampul" onclick="closeTenant('popup-sampul')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-sampul')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">SAMPUL KREATIF</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Digital Content & Animation Production
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Sampul Kreatif merupakan perusahaan yang bergerak di bidang industri kreatif digital. Kami adalah mitra strategis untuk produksi berbagai konten visual mulai dari animasi, pengembangan komik, hingga penulisan novel.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Selain fokus pada konten naratif, kami juga menyediakan layanan pengembangan aplikasi berbasis web yang inovatif untuk membantu klien menghadirkan solusi digital yang fungsional dan memiliki nilai estetika tinggi.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🎬</div>
+              <div class="font-semibold text-gray-800">Animasi</div>
+              <div class="text-sm text-gray-500">Produksi konten animasi kreatif</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📚</div>
+              <div class="font-semibold text-gray-800">Komik & Novel</div>
+              <div class="text-sm text-gray-500">Pengembangan cerita & ilustrasi</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">💻</div>
+              <div class="font-semibold text-gray-800">Web App</div>
+              <div class="text-sm text-gray-500">Aplikasi web kustom</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🎨</div>
+              <div class="font-semibold text-gray-800">Creative Design</div>
+              <div class="text-sm text-gray-500">Desain aset digital</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Media Sosial</div>
+              @sampulkreatif
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              0813 1450 7824
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              H. ADINDA
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-sampul')"
+            class="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-cpp" onclick="closeTenant('popup-cpp')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-cpp')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-teal-500 to-emerald-600 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">PT. Cukup Cakap Projek</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Digital Product & Creative Agency (Lumitra Creative)
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT. Cukup Cakap Projek (CPP) adalah perusahaan yang bergerak di bidang pengembangan produk digital dan agensi kreatif. Melalui brand <strong>Lumitra Creative</strong>, kami berfokus pada penyediaan solusi visual dan teknologi yang mendukung kebutuhan branding serta digitalisasi bisnis.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Kami berkomitmen untuk menghasilkan karya yang inovatif dan fungsional, membantu mitra kami dalam mengomunikasikan nilai merek mereka melalui platform digital yang tepat guna.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📱</div>
+              <div class="font-semibold text-gray-800">Product Digital</div>
+              <div class="text-sm text-gray-500">Pengembangan aset digital kreatif</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🎨</div>
+              <div class="font-semibold text-gray-800">Lumitra Creative</div>
+              <div class="text-sm text-gray-500">Layanan agensi kreatif & desain</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">💻</div>
+              <div class="font-semibold text-gray-800">Digital Marketing</div>
+              <div class="text-sm text-gray-500">Strategi pemasaran di platform digital</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Media Sosial</div>
+              @lumitracreative
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              0812 2490 8593
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              H. ADINDA
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-cpp')"
+            class="px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-savana" onclick="closeTenant('popup-savana')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-savana')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-sky-500 to-blue-600 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">PT Savana Madani Teknologi</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          ICT & Logistics Simulator Specialist
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT Savana Madani Teknologi adalah perusahaan teknologi yang berfokus pada pengembangan solusi ICT untuk sektor logistik dan transportasi. Kami memiliki spesialisasi dalam pembuatan sistem simulator yang membantu efisiensi manajemen transportasi laut.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Melalui integrasi teknologi informasi, kami berkomitmen untuk mendukung digitalisasi infrastruktur logistik nasional guna menciptakan sistem operasional yang lebih terukur dan aman.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🚢</div>
+              <div class="font-semibold text-gray-800">Transport Simulator</div>
+              <div class="text-sm text-gray-500">Simulator manajemen transportasi laut</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📦</div>
+              <div class="font-semibold text-gray-800">Logistics ICT</div>
+              <div class="text-sm text-gray-500">Solusi teknologi informasi logistik</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">💻</div>
+              <div class="font-semibold text-gray-800">Software Development</div>
+              <div class="text-sm text-gray-500">Pengembangan perangkat lunak kustom</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Website / Media Sosial</div>
+              <span class="italic text-gray-400">Informasi tidak tersedia di dokumen</span>
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              0813 1450 7824
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              H. ADINDA
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-savana')"
+            class="px-8 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-forit" onclick="closeTenant('popup-forit')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-forit')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">Sekolahan.id</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          IT Hardware & Software Solution
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT. Forit Asta Solusindo, melalui platform <strong>Sekolahan.id</strong>, menyediakan solusi menyeluruh bagi kebutuhan infrastruktur IT di sektor pendidikan dan bisnis. Kami menghadirkan integrasi antara perangkat keras (hardware) dan perangkat lunak (software) yang andal.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Kami fokus pada penyediaan sistem manajemen yang memudahkan tata kelola administrasi dan operasional guna mendukung percepatan digitalisasi instansi di Indonesia.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🖥️</div>
+              <div class="font-semibold text-gray-800">IT Hardware</div>
+              <div class="text-sm text-gray-500">Penyediaan infrastruktur perangkat keras</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📊</div>
+              <div class="font-semibold text-gray-800">Sekolahan.id App</div>
+              <div class="text-sm text-gray-500">Platform manajemen sistem informasi</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🛡️</div>
+              <div class="font-semibold text-gray-800">System Integration</div>
+              <div class="text-sm text-gray-500">Solusi integrasi IT terpadu</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Media Sosial</div>
+              @sekolahan.id
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              0813 1450 7824
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              H. ADINDA
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-forit')"
+            class="px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-halaqoh" onclick="closeTenant('popup-halaqoh')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-halaqoh')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-violet-600 to-purple-700 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">Halaqoh</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Islamic Education App & Smart Application Technology
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT. Teknologi Aplikasi Cerdas, melalui platform utama <strong>Halaqoh</strong>, adalah perusahaan teknologi yang berdedikasi pada pengembangan ekosistem digital untuk pendidikan Islam. Kami menghadirkan solusi teknologi cerdas yang memudahkan akses pembelajaran agama bagi masyarakat luas.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Kami menggabungkan nilai-nilai spiritual dengan inovasi teknologi terkini untuk menciptakan pengalaman belajar yang interaktif, modern, dan mudah dijangkau melalui perangkat mobile.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📖</div>
+              <div class="font-semibold text-gray-800">Halaqoh App</div>
+              <div class="text-sm text-gray-500">Aplikasi pembelajaran agama terpadu</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📱</div>
+              <div class="font-semibold text-gray-800">Smart Application</div>
+              <div class="text-sm text-gray-500">Pengembangan aplikasi cerdas kustom</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🎓</div>
+              <div class="font-semibold text-gray-800">Islamic Edu-Tech</div>
+              <div class="text-sm text-gray-500">Solusi teknologi untuk institusi pendidikan</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Media Sosial / Website</div>
+              @halaqoh.id
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              0813 1450 7824
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              H. ADINDA
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-halaqoh')"
+            class="px-8 py-3 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-tive" onclick="closeTenant('popup-tive')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-tive')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-pink-500 to-rose-600 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">TIVE STUDIO</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Digital Asset, Design & Illustration Specialist
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Anak Perusahaan PT. Kreatif Teknologi Multiguna • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Tive Studio adalah unit bisnis kreatif di bawah naungan PT. Kreatif Teknologi Multiguna yang berfokus pada penyediaan solusi visual berkualitas tinggi. Kami membantu klien dalam mewujudkan ide-ide kreatif melalui aset digital yang inovatif dan desain yang estetis.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Sebagai studio kreatif yang berbasis di Baros International Animation Center (BITC), kami spesialis dalam pembuatan ilustrasi, desain grafis, dan pengembangan aset visual yang mendukung kebutuhan branding maupun produksi media digital lainnya.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">💎</div>
+              <div class="font-semibold text-gray-800">Digital Asset</div>
+              <div class="text-sm text-gray-500">Pengembangan aset visual digital</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🎨</div>
+              <div class="font-semibold text-gray-800">Creative Design</div>
+              <div class="text-sm text-gray-500">Layanan desain grafis profesional</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">✒️</div>
+              <div class="font-semibold text-gray-800">Illustration</div>
+              <div class="text-sm text-gray-500">Pembuatan ilustrasi kustom</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Media Sosial</div>
+              Instagram: @tivestudio
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              0813 2038 2138
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              MIRWAN MIFTAHUL ARIF
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-tive')"
+            class="px-8 py-3 bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-acdi" onclick="closeTenant('popup-acdi')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-acdi')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-indigo-600 to-violet-700 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">ACDI</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Aviation Talent Pool & Training Platform
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT. Academy Creative Digital Indonesia (ACDI) adalah platform pengembangan bakat dan penyedia jasa pelatihan profesional. Kami berfokus pada peningkatan kompetensi SDM di berbagai sektor strategis melalui program pelatihan yang terstruktur dan berbasis industri.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Dengan spesialisasi pada sektor aviasi, bahasa, dan pemasaran digital, ACDI hadir untuk menjembatani kebutuhan industri akan tenaga kerja yang cakap dan siap pakai di era digital.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">✈️</div>
+              <div class="font-semibold text-gray-800">Pelatihan Aviasi</div>
+              <div class="text-sm text-gray-500">Persiapan karir di industri penerbangan</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🗣️</div>
+              <div class="font-semibold text-gray-800">Program Bahasa</div>
+              <div class="text-sm text-gray-500">Pelatihan kompetensi bahasa asing</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📈</div>
+              <div class="font-semibold text-gray-800">Digital Marketing</div>
+              <div class="text-sm text-gray-500">Strategi pemasaran era digital</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🎓</div>
+              <div class="font-semibold text-gray-800">Talent Pool</div>
+              <div class="text-sm text-gray-500">Platform pengembangan & penyaluran bakat</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Website / Media Sosial</div>
+              creadi.in / @creadimedi1
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              <span class="italic text-gray-400">Informasi tidak tersedia di dokumen</span>
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              WINDA NOVIANA GUNAWAN
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-acdi')"
+            class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-jumpstart" onclick="closeTenant('popup-jumpstart')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-jumpstart')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-amber-700 to-yellow-800 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">JUMP START</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Smart Vending Machine (Coffee Specialist)
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Jump Start merupakan penyedia layanan kopi modern yang memanfaatkan teknologi Smart Vending Machine. Kami menghadirkan kemudahan bagi para penikmat kopi untuk mendapatkan minuman berkualitas tinggi secara cepat dan otomatis.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Dengan integrasi teknologi digital pada mesin kami, Jump Start memberikan pengalaman baru dalam menikmati sajian kopi di area perkantoran maupun ruang publik, khususnya di ekosistem BITC Cimahi.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">☕</div>
+              <div class="font-semibold text-gray-800">Fresh Coffee</div>
+              <div class="text-sm text-gray-500">Minuman kopi berkualitas dari mesin pintar</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🤖</div>
+              <div class="font-semibold text-gray-800">Vending Machine</div>
+              <div class="text-sm text-gray-500">Layanan otomatisasi penjualan kopi</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">⚡</div>
+              <div class="font-semibold text-gray-800">Quick Service</div>
+              <div class="text-sm text-gray-500">Pelayanan cepat dan praktis</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Website / Media Sosial</div>
+              <span class="italic text-gray-400">Informasi tidak tersedia di dokumen</span>
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              +62 889-7081-6701
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              NAUFAL
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-jumpstart')"
+            class="px-8 py-3 bg-amber-800 hover:bg-amber-900 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-blitzspot" onclick="closeTenant('popup-blitzspot')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-blitzspot')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-blue-700 to-slate-800 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">Blitzspot</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          IT & Network Solution Provider
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          PT. Blitz Network Solution • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT. Blitz Network Solution, yang dikenal dengan brand <strong>Blitzspot</strong>, adalah perusahaan yang bergerak di bidang teknologi informasi dengan spesialisasi pada solusi jaringan dan infrastruktur IT. Kami menyediakan layanan integrasi sistem yang andal untuk mendukung konektivitas bisnis dan instansi.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Berlokasi di Baros International Animation Center (BITC), Blitzspot berkomitmen untuk menghadirkan teknologi jaringan yang stabil dan aman guna menjawab tantangan digitalisasi di era modern.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🌐</div>
+              <div class="font-semibold text-gray-800">Network Solution</div>
+              <div class="text-sm text-gray-500">Penyediaan infrastruktur jaringan internet</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🖥️</div>
+              <div class="font-semibold text-gray-800">IT Infrastructure</div>
+              <div class="text-sm text-gray-500">Manajemen sistem informasi perusahaan</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🛠️</div>
+              <div class="font-semibold text-gray-800">System Integration</div>
+              <div class="text-sm text-gray-500">Integrasi perangkat lunak dan keras</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Website</div>
+              www.blitzspot.id
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              0813 2222 4109
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              MUHAMMAD ADRA RAHARDI
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-blitzspot')"
+            class="px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-isrk" onclick="closeTenant('popup-isrk')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-isrk')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-amber-600 to-orange-700 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">PT. Inti Sari Rezeki Komoditi</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Trading & Commodity Distribution (Natural Products)
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT. Inti Sari Rezeki Komoditi (ISRK) adalah perusahaan yang bergerak di sektor perdagangan dan distribusi komoditas hasil alam. Kami fokus pada penyediaan rantai pasok yang efisien untuk produk-produk esensial berbasis pertanian.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Saat ini, ISRK menjadi mitra strategis dalam distribusi minyak pertanian dan minyak goreng, memastikan ketersediaan produk berkualitas tinggi untuk memenuhi kebutuhan pasar industri maupun konsumsi rumah tangga.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🌻</div>
+              <div class="font-semibold text-gray-800">Minyak Pertanian</div>
+              <div class="text-sm text-gray-500">Distribusi produk turunan pertanian</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🍳</div>
+              <div class="font-semibold text-gray-800">Cooking Oil</div>
+              <div class="text-sm text-gray-500">Distribusi minyak goreng berkualitas</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🚚</div>
+              <div class="font-semibold text-gray-800">Commodity Trading</div>
+              <div class="text-sm text-gray-500">Perdagangan hasil alam berskala luas</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Media Sosial</div>
+              <span class="italic text-gray-400">Informasi tidak tersedia di dokumen</span>
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              0813 2038 2138
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kategori Bisnis</div>
+              Distribusi & Komoditi
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-isrk')"
+            class="px-8 py-3 bg-amber-700 hover:bg-amber-800 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-vaquest" onclick="closeTenant('popup-vaquest')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-vaquest')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-indigo-700 to-slate-700 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">VAQUEST NETWORK</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Telecommunication Cable Provider & Network Specialist
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Vaquest Network adalah perusahaan penyedia layanan telekomunikasi yang berfokus pada infrastruktur kabel dan jaringan. Kami berdedikasi untuk menyediakan konektivitas yang stabil dan berkualitas tinggi guna mendukung kebutuhan komunikasi digital baik untuk sektor bisnis maupun residensial.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Sebagai bagian dari ekosistem teknologi di BITC Cimahi, kami terus memperluas jangkauan dan inovasi dalam teknologi kabel telekomunikasi untuk memastikan efisiensi transmisi data bagi seluruh mitra kami.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🔌</div>
+              <div class="font-semibold text-gray-800">Cable Provider</div>
+              <div class="text-sm text-gray-500">Penyedia infrastruktur telekomunikasi kabel</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">📡</div>
+              <div class="font-semibold text-gray-800">Network Installation</div>
+              <div class="text-sm text-gray-500">Pemasangan dan pemeliharaan jaringan</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">💻</div>
+              <div class="font-semibold text-gray-800">IT Support</div>
+              <div class="text-sm text-gray-500">Layanan dukungan teknis infrastruktur</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Website</div>
+              vaquest.network
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              0899-0064-307
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              HASAN
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-vaquest')"
+            class="px-8 py-3 bg-indigo-700 hover:bg-indigo-800 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="popup-ipng" onclick="closeTenant('popup-ipng')" 
+     class="fixed inset-0 bg-black/60 hidden z-50 overflow-y-auto backdrop-blur-sm">
+
+  <div class="flex items-start justify-center min-h-screen p-6">
+    
+    <div onclick="event.stopPropagation()" 
+         class="max-w-6xl w-full bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden relative my-8">
+
+      <button onclick="closeTenant('popup-ipng')"
+        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold z-10">
+        ✕
+      </button>
+
+      <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white p-12">
+        <h2 class="text-3xl md:text-4xl font-bold uppercase">PT. Indonesia Produk Nusantara Global</h2>
+        <p class="mt-3 text-sm md:text-base opacity-90">
+          Natural Resources & Research Downstreaming Specialist
+        </p>
+        <div class="mt-4 text-sm opacity-80">
+          Tenant Kawasan Strategis Iptek • BITC Cimahi
+        </div>
+      </div>
+
+      <div class="p-10 md:p-14 space-y-16">
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Profil Perusahaan</h3>
+          <p class="text-gray-600 leading-relaxed">
+            PT. Indonesia Produk Nusantara Global adalah perusahaan yang bergerak di bidang pengelolaan sumber daya alam dan hilirisasi produk riset. Kami menjembatani hasil penelitian universitas dengan kebutuhan pasar industri, memastikan inovasi akademis dapat diimplementasikan menjadi produk komersial yang bermanfaat bagi masyarakat.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            Kami berkomitmen untuk meningkatkan nilai tambah komoditas pertanian lokal melalui proses pengolahan yang modern dan berkelanjutan, sekaligus memperkuat ekosistem riset nasional melalui kemitraan strategis dengan institusi pendidikan.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Produk & Layanan Utama</h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🌿</div>
+              <div class="font-semibold text-gray-800">Bahan Baku Natural</div>
+              <div class="text-sm text-gray-500">Penyedia komoditas pertanian berkualitas</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🔬</div>
+              <div class="font-semibold text-gray-800">Hilirisasi Riset</div>
+              <div class="text-sm text-gray-500">Komersialisasi hasil riset universitas</div>
+            </div>
+
+            <div class="bg-white border p-6 rounded-2xl shadow-sm hover:shadow-lg transition">
+              <div class="text-3xl mb-3">🌍</div>
+              <div class="font-semibold text-gray-800">Global Supply</div>
+              <div class="text-sm text-gray-500">Ekspor dan distribusi produk nusantara</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-gray-50 border p-8 rounded-2xl">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Kontak & Informasi</h3>
+
+          <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-600">
+
+            <div>
+              <div class="font-semibold text-gray-800">Media Sosial / Website</div>
+              <span class="italic text-gray-400">Informasi tidak tersedia di dokumen</span>
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Pimpinan / Perwakilan</div>
+              ADIMAS
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Kontak</div>
+              <span class="italic text-gray-400">Informasi tidak tersedia di dokumen</span>
+            </div>
+
+            <div>
+              <div class="font-semibold text-gray-800">Lokasi</div>
+              Baros International Animation Center (BITC)
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center -mt-8 pb-4">
+          <button onclick="closeTenant('popup-ipng')"
+            class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95 relative z-10">
+            Tutup Detail Pop-up
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- buat manggil popup -->
+<div id="tenantPopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+<div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-8 relative">
+
+<button onclick="closeTenantPopup()" class="absolute top-3 right-4 text-gray-400 hover:text-gray-600 text-xl">&times;</button>
+
+<h3 class="text-xl font-bold text-gray-800 mb-4">Status Data Profil</h3>
+
+<p class="text-gray-600 text-sm leading-relaxed">
+Informasi profil tenant belum tersedia dalam arsip digital UPTD Cimahi Techno Park dan masih dalam proses pengumpulan serta verifikasi untuk kebutuhan publikasi pada sistem E-Katalog Tenant IBT.
+</p>
+
+<div class="mt-6 text-right">
+<button onclick="closeTenantPopup()" class="px-5 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+Tutup
+</button>
+</div>
+
+</div>
+</div>
+
+   <!-- <section id="tenant" class="py-20 lg:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16"><span class="fade-in inline-block px-4 py-1 bg-accent/10 text-primary text-sm font-medium rounded-full mb-4">Portfolio</span>
+      <h2 class="fade-in text-3xl sm:text-4xl font-bold text-primary mb-2">Profil Tenant</h2>
+      <div class="w-20 h-1 bg-accent mx-auto rounded-full mb-6"></div>
+      <p class="fade-in text-gray-600 max-w-2xl mx-auto">Detail lengkap setiap tenant inkubasi</p>
+     </div>
+     More Tenants indicator
+     <div class="text-center">
+      <p class="text-gray-500 mb-4">Dan masih banyak tenant lainnya...</p>
+      <div class="flex justify-center gap-3"><span class="w-3 h-3 bg-primary rounded-full"></span> <span class="w-3 h-3 bg-accent rounded-full"></span> <span class="w-3 h-3 bg-gray-300 rounded-full"></span>
+      </div>
+     </div>
+    </div>
+   </section> Divider 
+   <div class="section-divider max-w-6xl mx-auto"></div> -->
+   <!-- Penutup -->
+   <section id="penutup" class="py-20 lg:py-32 bg-light">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-12"><span class="fade-in inline-block px-4 py-1 bg-accent/10 text-primary text-sm font-medium rounded-full mb-4">Penutup</span>
+      <h2 class="fade-in text-3xl sm:text-4xl font-bold text-primary mb-2">Penutup</h2>
+      <div class="w-20 h-1 bg-accent mx-auto rounded-full"></div>
+     </div>
+     <div class="fade-in bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-blue-100 mb-12">
+      <div class="space-y-4 text-gray-600 leading-relaxed">
+       <p>Demikian Katalog Tenant Inkubasi Bisnis Teknologi Cimahi Techno Park yang telah kami susun. Katalog ini merupakan bukti nyata dari kerja keras dan dedikasi seluruh tenant dalam mengembangkan inovasi dan teknologi untuk kemajuan bangsa.</p>
+       <p>Kami berharap katalog ini dapat memberikan gambaran yang komprehensif tentang potensi dan capaian para tenant kami. Bagi para pemangku kepentingan, investor, maupun mitra potensial, kami membuka pintu selebar-lebarnya untuk berkolaborasi dan bersinergi dalam membangun ekosistem inovasi yang lebih kuat.</p>
+       <p>Terima kasih kepada seluruh pihak yang telah berkontribusi dalam perjalanan inkubasi ini. Mari bersama-sama kita wujudkan Indonesia yang lebih inovatif dan berdaya saing global.</p>
+      </div>
+      <div class="mt-8 pt-6 border-t border-blue-100 text-center">
+       <p class="text-gray-500 italic">"Bersama Membangun Ekosistem Inovasi untuk Indonesia Maju"</p>
+      </div>
+     </div><!-- CTA -->
+     <div id="kontak" class="fade-in bg-gradient-to-br from-primary to-secondary p-8 md:p-12 rounded-3xl text-center scroll-mt-24">
+      <div class="w-16 h-16 mx-auto mb-6 bg-accent/20 rounded-2xl flex items-center justify-center">
+       <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+       </svg>
+      </div>
+      <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Mari Berkolaborasi!</h3>
+      <p class="text-blue-100 mb-8 max-w-xl mx-auto">Tertarik untuk bermitra atau ingin bergabung sebagai tenant? Hubungi kami sekarang dan jadilah bagian dari ekosistem inovasi Cimahi Techno Park.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="mailto:info@cimahitechnopark.id" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-accent/30">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg><span>Hubungi Kami</span> </a> <a href="#hero" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-medium px-8 py-4 rounded-xl backdrop-blur-sm transition-all">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg><span>Kembali ke Atas</span> </a>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div><!-- Footer -->
+  <footer class="bg-primary py-12">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8 mb-8"><!-- Brand -->
+     <div>
+      <div class="flex items-center gap-3 mb-4">
+       <div class="w-12 h-12 bg-gradient-to-br from-accent to-secondary rounded-xl flex items-center justify-center">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+       </div>
+       <div><span class="text-white font-bold">Cimahi Techno Park</span> <span class="block text-xs text-blue-200">Inkubasi Bisnis Teknologi</span>
+       </div>
+      </div>
+      <p class="text-blue-200 text-sm">Membangun ekosistem inovasi dan teknologi untuk meningkatkan daya saing daerah.</p>
+     </div><!-- Quick Links -->
+     <div>
+      <h4 class="text-white font-semibold mb-4">Navigasi</h4>
+      <ul class="space-y-2">
+       <li><a href="#profil" class="text-blue-200 hover:text-accent text-sm transition-colors">Profil Lembaga</a></li>
+       <li><a href="#tenant-tahun" class="text-blue-200 hover:text-accent text-sm transition-colors">Daftar Tenant</a></li>
+       <li><a href="#tenant" class="text-blue-200 hover:text-accent text-sm transition-colors">Profil Tenant</a></li>
+       <li><a href="#kontak" class="text-blue-200 hover:text-accent text-sm transition-colors">Kontak</a></li>
+      </ul>
+     </div><!-- Contact -->
+     <div>
+      <h4 class="text-white font-semibold mb-4">Kontak Kami</h4>
+      <ul class="space-y-2 text-sm text-blue-200">
+       <li class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg> Jl. Baros No. 63, Cimahi, Jawa Barat</li>
+       <li class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg><span id="contact-email">info@cimahitechnopark.id</span></li>
+       <li class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg> +62 22-1234-5678</li>
+      </ul>
+     </div>
+    </div>
+    <div class="pt-8 border-t border-blue-900 flex flex-col md:flex-row justify-between items-center gap-4">
+     <p class="text-blue-300 text-sm">© 2024 Cimahi Techno Park. All rights reserved.</p>
+     <div class="flex gap-4"><a href="#" class="w-10 h-10 bg-blue-900 hover:bg-accent rounded-lg flex items-center justify-center transition-colors group">
+       <svg class="w-5 h-5 text-blue-200 group-hover:text-primary" fill="currentColor" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+       </svg></a> <a href="#" class="w-10 h-10 bg-blue-900 hover:bg-accent rounded-lg flex items-center justify-center transition-colors group">
+       <svg class="w-5 h-5 text-blue-200 group-hover:text-primary" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+       </svg></a> <a href="#" class="w-10 h-10 bg-blue-900 hover:bg-accent rounded-lg flex items-center justify-center transition-colors group">
+       <svg class="w-5 h-5 text-blue-200 group-hover:text-primary" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+       </svg></a>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      hero_title: 'KATALOG TENANT',
+      hero_subtitle: 'Membangun Ekosistem Inovasi dan Teknologi untuk Meningkatkan Daya Saing Daerah',
+      contact_email: 'info@cimahitechnopark.id'
+    };
+
+    let config = { ...defaultConfig };
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (newConfig) => {
+          config = { ...defaultConfig, ...newConfig };
+          
+          // Update hero title
+          const heroTitle = document.getElementById('hero-title');
+          if (heroTitle) {
+            heroTitle.innerHTML = `${config.hero_title || defaultConfig.hero_title}<br><span class="text-accent">INKUBASI BISNIS</span><br>TEKNOLOGI`;
+          }
+          
+          // Update hero subtitle
+          const heroSubtitle = document.getElementById('hero-subtitle');
+          if (heroSubtitle) {
+            heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+          }
+          
+          // Update contact email
+          const contactEmail = document.getElementById('contact-email');
+          if (contactEmail) {
+            contactEmail.textContent = config.contact_email || defaultConfig.contact_email;
+          }
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['hero_title', config.hero_title || defaultConfig.hero_title],
+          ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+          ['contact_email', config.contact_email || defaultConfig.contact_email]
+        ])
+      });
+    }
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      
+      // Close menu when clicking a link
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // Scroll animation observer
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Navbar scroll effect
+    let lastScrollY = window.scrollY;
+    const nav = document.querySelector('nav');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        nav.classList.add('shadow-md');
+      } else {
+        nav.classList.remove('shadow-md');
+      }
+      lastScrollY = window.scrollY;
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d6580b0d3db1c0e',t:'MTc3MjUwNzk5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>
+function openTenantPopup() {
+document.getElementById("tenantPopup").classList.remove("hidden");
+document.getElementById("tenantPopup").classList.add("flex");
+}
+
+function closeTenantPopup() {
+document.getElementById("tenantPopup").classList.remove("flex");
+document.getElementById("tenantPopup").classList.add("hidden");
+}
+</script>
+<a href="https://forms.gle/hKYo7NDdC6iL73YV8" target="_blank" class="survey-btn">
+  Kirim Masukan
+</a>
+
+<style>
+.survey-btn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 9999;
+}
+
+.survey-btn:hover{
+  background: #1e40af;
+}
+</style>
+<script>
+
+function openTenant(id) {
+  document.getElementById(id).classList.remove("hidden");
+}
+
+function closeTenant(id) {
+  document.getElementById(id).classList.add("hidden");
+}
+
+</script>
+</body>
+</html>
